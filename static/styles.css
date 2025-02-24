@@ -229,13 +229,7 @@ form > button {
   font-size: 1.5em;
   font-family: var(--main-font);
   border: none;
-  background: linear-gradient(
-    45deg,
-    var(--pink-color),
-    var(--purple-color),
-    var(--yellow-color),
-    var(--orange-color)
-  );
+  background: linear-gradient(45deg, var(--pink-color), var(--yellow-color));
   background-size: 1000%;
   background-repeat: no-repeat;
   cursor: pointer;
@@ -249,7 +243,27 @@ form > button:hover {
   background-size: 130%;
   scale: 1.1;
 }
+.shake-animation {
+  position: relative;
+  animation: shake 1s linear;
+  background-color: red;
+}
 
+@keyframes shake {
+  0% {
+    left: 10px;
+  }
+  25% {
+    left: -10px;
+  }
+  50% {
+    left: 5px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+/* FOOTER SECTION */
 footer {
   width: 100%;
   height: 100px;

@@ -19,11 +19,12 @@
         <h1 class="title">QR-CODE GENERATOR</h1>
         <p class="subtitle">Your personal QR-code generator.</p>
 
-        <form action="#">
+        <form onsubmit="return formValidation(this)">
           <label for="qrcode-content">Type content of your QR bellow: </label>
           <input
             type="text"
             id="qrcode-content"
+            name="qrcode_content"
             placeholder="Type here (link, text, etc...)"
           />
 
@@ -34,5 +35,7 @@
     <footer>
       <p>© Made with Love by M. Andriy</p>
     </footer>
+
+    <script src="./index.js"></script>
   </body>
 </html>
