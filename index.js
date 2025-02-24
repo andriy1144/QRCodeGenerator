@@ -1,11 +1,40 @@
 function formValidation(form) {
   const userInput = form.qrcode_content;
-  console.log(userInput);
+
   if (userInput.value === "") {
     userInput.classList.add("shake-animation");
     setTimeout(() => userInput.classList.remove("shake-animation"), 200);
-    return false;
+  } else {
+    document.querySelector("body").innerHTML +=
+      "<div class='qrcode-window'>" +
+      "<div class='qrcode-container'>" +
+      "<h2>Here is your QR-CODE</h2>" +
+      "<div id='qrcode'></div>" +
+      "<div id='action-block'>" +
+      "<a href='#' class='dwn-link' download>Download</a> <br> <a href='#' class='cls-btn'>Close</a>" +
+      "</div>" +
+      "</div>" +
+      "</div>";
+    generateQRCode(userInput.value);
   }
+  return false;
+}
 
-  return true;
+function generateDownloadLink() {
+  const imgElement = document.querySelector("#qrcode img");
+
+  if (imgElement) {
+    const imgSrc = imgElement.src;
+    document.querySelector(".dwn-link").setAttribute("href", imgSrc);
+  } else {
+    console.error("QR code image not found!");
+  }
+}
+function generateQRCode(text) {
+  document.querySelector("#qrcode").innerHTML = "";
+  new QRCode(document.getElementById("qrcode"), text);
+
+  setTimeout(generateDownloadLink, 500); //Waiting for image to generate
+
+  generateDownloadLink();
 }
