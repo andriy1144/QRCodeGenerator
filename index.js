@@ -30,11 +30,35 @@ function generateDownloadLink() {
     console.error("QR code image not found!");
   }
 }
+
+function generateCopyLink() {
+  const imgBS64 = document.querySelector("#qrcode img").src;
+  const imgBlob = convertImgBase64ToBlob(imgBS64);
+  document.querySelector(".cp-link").addEventListener("click", () => {
+    window.navigator.clipboard.write([
+      new ClipboardItem({ "image/png": imgBlob }),
+    ]);
+    document.querySelector(".cp-link").innerHTML = "Done!";
+  });
+}
+
+function convertImgBase64ToBlob(imgBS64) {
+  const imgDecode = atob(imgBS64.split(",")[1]);
+
+  const byteNumbers = new Array(imgDecode.length);
+  for (let i = 0; i < imgDecode.length; i++) {
+    byteNumbers[i] = imgDecode.charCodeAt(i);
+  }
+
+  const byteArray = new Uint8Array(byteNumbers);
+
+  return new Blob([byteArray], { type: "image/png" });
+}
+
 function generateQRCode(text) {
   document.querySelector("#qrcode").innerHTML = "";
   new QRCode(document.getElementById("qrcode"), text);
 
   setTimeout(generateDownloadLink, 500); //Waiting for image to generate
-
-  generateDownloadLink();
+  setTimeout(generateCopyLink, 500);
 }
