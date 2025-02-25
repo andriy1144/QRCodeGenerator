@@ -11,7 +11,7 @@ function formValidation(form) {
       "<h2>Here is your QR-CODE</h2>" +
       "<div id='qrcode'></div>" +
       "<div id='action-block'>" +
-      "<a href='#' class='dwn-link' download>Download</a> <br> <a href='#' class='cls-btn'>Close</a>" +
+      "<a href='#' class='btn dwn-link' download>Download</a><a href='#' class='btn cp-link'>Copy</a> <a href='/' class='btn cls-link'>Close</a> " +
       "</div>" +
       "</div>" +
       "</div>";
