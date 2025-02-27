@@ -45,6 +45,7 @@
     font-size: 1.2em;
   }
 }
+<<<<<<< HEAD
 
 @media screen and (max-width: 300px) {
   .title {
@@ -66,3 +67,5 @@
     font-size: 0.9em;
   }
 }
+=======
+>>>>>>> 62192e34112bd8a077ee215491613ff355b097e7
