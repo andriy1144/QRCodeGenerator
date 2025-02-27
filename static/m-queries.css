@@ -1,0 +1,68 @@
+@media (max-width: 1100px) {
+  form {
+    width: 75%;
+  }
+}
+
+@media (max-width: 740px) {
+  .title {
+    font-size: 5em;
+  }
+  .subtitle {
+    font-size: 1.5em;
+  }
+  form > label {
+    font-size: 1.2em;
+  }
+
+  form > input {
+    font-size: 1em;
+  }
+
+  form > button {
+    font-size: 1.2em;
+    width: 150px;
+  }
+}
+
+@media (max-width: 440px) {
+  .title {
+    font-size: 4em;
+  }
+  .subtitle {
+    font-size: 1.3em;
+  }
+  form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 350px) {
+  .title {
+    font-size: 3em;
+  }
+  .subtitle {
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .title {
+    font-size: 2em;
+  }
+  .subtitle {
+    font-size: 1em;
+  }
+  form > input {
+    height: 20px;
+    font-size: 0.7em;
+  }
+  form > button {
+    width: 100%;
+    font-size: 1em;
+    height: 36px;
+  }
+  form > label {
+    font-size: 0.9em;
+  }
+}
