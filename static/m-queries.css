@@ -2,6 +2,9 @@
   form {
     width: 75%;
   }
+  footer{
+    height: 75px;
+  }
 }
 
 @media (max-width: 740px) {
@@ -52,6 +55,9 @@
   }
   .qrcode-container {
     height: 400px;
+  }
+  footer > p{
+    font-size: 0.7em;
   }
 }
 
