@@ -2,9 +2,6 @@
   form {
     width: 75%;
   }
-  footer{
-    height: 75px;
-  }
 }
 
 @media (max-width: 740px) {
