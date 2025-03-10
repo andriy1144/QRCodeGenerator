@@ -11,7 +11,7 @@ function formValidation(form) {
       "<h2>Here is your QR-CODE</h2>" +
       "<div id='qrcode'></div>" +
       "<div id='action-block'>" +
-      "<a href='#' class='btn dwn-link' download>Download</a><a href='#' class='btn cp-link'>Copy</a> <a href='index.html' class='btn cls-link'>Close</a> " +
+      "<a href='#' class='btn dwn-link'>Download</a><a href='#' class='btn cp-link'>Copy</a> <a href='index.html' class='btn cls-link'>Close</a> " +
       "</div>" +
       "</div>" +
       "</div>";
@@ -26,6 +26,7 @@ function generateDownloadLink() {
   if (imgElement) {
     const imgSrc = imgElement.src;
     document.querySelector(".dwn-link").setAttribute("href", imgSrc);
+    document.querySelector(".dwn-link").setAttribute("download", "qr-code.png");
   } else {
     console.error("QR code image not found!");
   }
@@ -59,6 +60,6 @@ function generateQRCode(text) {
   document.querySelector("#qrcode").innerHTML = "";
   new QRCode(document.getElementById("qrcode"), text);
 
-  setTimeout(generateDownloadLink, 500); //Waiting for image to generate
-  setTimeout(generateCopyLink, 500);
+  setTimeout(generateDownloadLink, 1500); //Waiting for image to generate
+  setTimeout(generateCopyLink, 1500);
 }
