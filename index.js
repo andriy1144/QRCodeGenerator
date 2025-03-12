@@ -60,6 +60,6 @@ function generateQRCode(text) {
   document.querySelector("#qrcode").innerHTML = "";
   new QRCode(document.getElementById("qrcode"), text);
 
-  setTimeout(generateDownloadLink, 1500); //Waiting for image to generate
-  setTimeout(generateCopyLink, 1500);
+  setTimeout(generateDownloadLink, 500); //Waiting for image to generate
+  setTimeout(generateCopyLink, 500);
 }

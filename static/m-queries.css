@@ -40,7 +40,19 @@
   }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 390px) {
+  .qrcode-container > h2 {
+    font-size: 1.75em;
+  }
+  .qrcode-container{
+    height: fit-content;
+  }
+  .qrcode-container > #qrcode{
+      margin: 30px;
+  }
+}
+
+@media (max-width: 375px) {
   .title {
     font-size: 3em;
   }
@@ -49,9 +61,6 @@
   }
   .qrcode-container > h2 {
     font-size: 1.75em;
-  }
-  .qrcode-container {
-    height: 400px;
   }
   footer > p{
     font-size: 0.7em;
@@ -80,9 +89,6 @@
 
   .qrcode-container > h2 {
     font-size: 1em;
-  }
-  .qrcode-container {
-    height: 300px;
   }
   #qrcode {
     margin: 25px 0;
