@@ -21,10 +21,10 @@ function formValidation(form) {
 }
 
 function generateDownloadLink() {
-  const imgElement = document.querySelector("#qrcode img");
+  const canvas = document.querySelector("#qrcode canvas");
 
-  if (imgElement) {
-    const imgSrc = imgElement.src;
+  if (canvas) {
+    const imgSrc = canvas.toDataURL("image/png");
     document.querySelector(".dwn-link").setAttribute("href", imgSrc);
     document.querySelector(".dwn-link").setAttribute("download", "qr-code.png");
   } else {
