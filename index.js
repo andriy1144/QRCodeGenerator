@@ -43,6 +43,14 @@ function generateCopyLink() {
   });
 }
 
+function detectDeviceType(){
+  if(navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i)){
+    return "p"; //Phone
+  }else{
+    return "d"; //Desktop
+  }
+}
+
 function convertImgBase64ToBlob(imgBS64) {
   const imgDecode = atob(imgBS64.split(",")[1]);
 
@@ -61,5 +69,8 @@ function generateQRCode(text) {
   new QRCode(document.getElementById("qrcode"), text);
 
   setTimeout(generateDownloadLink, 500); //Waiting for image to generate
-  setTimeout(generateCopyLink, 500);
+  
+  //Providing a temporary copy restriction for phones
+  if(detectDeviceType() != "p") setTimeout(generateCopyLink, 500);
+  else document.querySelector(".cp-link").style.display = "none";
 }
