@@ -43,12 +43,8 @@ function generateCopyLink() {
   });
 }
 
-function detectDeviceType(){
-  if(navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i)){
-    return "p"; //Phone
-  }else{
-    return "d"; //Desktop
-  }
+function detectPhoneDeviceType(){
+  return navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i)
 }
 
 function convertImgBase64ToBlob(imgBS64) {
@@ -71,6 +67,6 @@ function generateQRCode(text) {
   setTimeout(generateDownloadLink, 500); //Waiting for image to generate
   
   //Providing a temporary copy restriction for phones
-  if(detectDeviceType() != "p") setTimeout(generateCopyLink, 500);
+  if(!detectPhoneDeviceType()) setTimeout(generateCopyLink, 500);
   else document.querySelector(".cp-link").style.display = "none";
 }
