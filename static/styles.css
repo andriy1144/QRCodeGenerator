@@ -396,3 +396,17 @@ footer > p {
 .cls-link:hover {
   background-color: red;
 }
+
+/* ANIMATION APPEAR */
+.appearOnLoad{
+  transition-property: all;
+  transition-duration: 0.6s;
+  transition-timing-function: ease-in;
+  transition-delay: calc(200ms * var(--i));
+
+  @starting-style{
+    opacity:0;
+    transform: translateY(-1rem);
+    scale: 1.5;
+  }
+}
