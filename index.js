@@ -20,6 +20,7 @@ function formValidation(form) {
   return false;
 }
 
+/* QR_CODE GENERATION SECTION!!! */
 function generateDownloadLink() {
   const canvas = document.querySelector("#qrcode canvas");
 
@@ -70,3 +71,16 @@ function generateQRCode(text) {
   if(!detectPhoneDeviceType()) setTimeout(generateCopyLink, 500);
   else document.querySelector(".cp-link").style.display = "none";
 }
+
+
+/* TABS FUNCTIONALITY */
+const tabBtns = document.querySelectorAll("[data-tab-target]");
+const tabs = document.querySelectorAll("[data-tab-content]")
+
+tabBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const targetTab = document.querySelector(btn.dataset.tabTarget);
+    tabs.forEach((tab) => tab.classList.remove("active"));
+    targetTab.classList.add("active");
+  })
+});

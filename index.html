@@ -20,7 +20,12 @@
         <h1 class="title appearOnLoad" style="--i:0">QR-CODE GENERATOR</h1>
         <p class="subtitle appearOnLoad" style="--i:2">Your personal QR-code generator.</p>
 
-        <form onsubmit="return formValidation(this)" class="appearOnLoad" style="--i:4">
+        <div class="tab-buttons">
+          <button class="tab-button" data-tab-target="#net-qr-code-tab">WI-FI QR-CODE</button>
+          <button class="tab-button" data-tab-target="#qrcode-tab">CLASSIC QR-CODE</button>
+        </div>
+
+        <form id="qrcode-tab" onsubmit="return formValidation(this)" class="appearOnLoad active" style="--i:4" data-tab-content>
           <label for="qrcode-content">Type content of your QR bellow: </label>
           <input
             type="text"
@@ -28,6 +33,19 @@
             name="qrcode_content"
             placeholder="Type here (link, text, etc...)"
           />
+
+          <button type="submit">Generate</button>
+        </form>
+
+        <form id="net-qr-code-tab" onsubmit="return false" data-tab-content>
+          <label for="net-protocol">Network protocol: </label>
+          <input type="text" id="net-protocol" name="net-protocol" placeholder="...">
+
+          <label for="net-name">Network name:</label>
+          <input type="text" id="net-name" name="net-name" placeholder="...">
+
+          <label for="">Network password: </label>
+          <input type="password" name="net-password" id="net-password" placeholder="...">
 
           <button type="submit">Generate</button>
         </form>
