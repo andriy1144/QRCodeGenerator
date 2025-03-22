@@ -2,22 +2,30 @@ function formValidation(form) {
   const userInput = form.qrcode_content;
 
   if (userInput.value === "") {
-    userInput.classList.add("shake-animation");
-    setTimeout(() => userInput.classList.remove("shake-animation"), 200);
+    addWarnAnim(userInput);
   } else {
-    document.querySelector("body").innerHTML +=
-      "<div class='qrcode-window'>" +
-      "<div class='qrcode-container'>" +
-      "<h2>Here is your QR-CODE</h2>" +
-      "<div id='qrcode'></div>" +
-      "<div id='action-block'>" +
-      "<a href='#' class='btn dwn-link'>Download</a><a href='#' class='btn cp-link'>Copy</a> <a href='index.html' class='btn cls-link'>Close</a> " +
-      "</div>" +
-      "</div>" +
-      "</div>";
-    generateQRCode(userInput.value);
+    generateModalWindowAndCode(userInput.value);
   }
   return false;
+}
+
+function addWarnAnim(field){
+  field.classList.add("shake-animation");
+  setTimeout(() => field.classList.remove("shake-animation"), 200);
+}
+
+function generateModalWindowAndCode(content){
+  document.querySelector("body").innerHTML +=
+  "<div class='qrcode-window'>" +
+  "<div class='qrcode-container'>" +
+  "<h2>Here is your QR-CODE</h2>" +
+  "<div id='qrcode'></div>" +
+  "<div id='action-block'>" +
+  "<a href='#' class='btn dwn-link'>Download</a><a href='#' class='btn cp-link'>Copy</a> <a href='index.html' class='btn cls-link'>Close</a> " +
+  "</div>" +
+  "</div>" +
+  "</div>";
+  generateQRCode(content);
 }
 
 /* QR_CODE GENERATION SECTION!!! */
@@ -93,3 +101,33 @@ tabBtns.forEach((btn) => {
     btn.classList.add("activeBtn");
   })
 });
+
+/* WI-FI QR CODE GENERATION */
+function netFormValidation(form){
+  const netName = form.net_name;
+  const netPassw = form.net_password;
+  const netProt = form.net_protocol;
+
+  let isValid = true;
+
+  if(netName.value === ""){
+    addWarnAnim(netName);
+    isValid = false;
+  }
+
+  if(netPassw.value === ""){
+    addWarnAnim(netPassw);
+    isValid = false;
+  }
+
+  if(isValid){
+    const netConfig = createWiFiConfiguration(netName.value,netPassw.value, netProt.value);
+    generateModalWindowAndCode(netConfig);
+  }
+
+  return false;
+}
+
+function createWiFiConfiguration(netName, netPass, netProt){
+  return `WIFI:T:${netProt};S:${netName};P:${netPass};;`;
+}

@@ -37,17 +37,17 @@
           <button type="submit">Generate</button>
         </form>
 
-        <form id="net-qr-code-tab" onsubmit="return false" data-tab-content>
+        <form id="net-qr-code-tab" onsubmit="return netFormValidation(this)" data-tab-content>
 
-          <label for="net-name">WI-FI network name:</label>
-          <input type="text" id="net-name" name="net-name" placeholder="Enter your WI-FI network's name">
+          <label for="net_name">WI-FI network name:</label>
+          <input type="text" id="net_name" name="net_name" placeholder="Enter your WI-FI network's name">
 
-          <label for="net-password">WI-FI network password: </label>
-          <input type="password" name="net-password" id="net-password" placeholder="Enter your WI-FI network's password">
+          <label for="net_password">WI-FI network password: </label>
+          <input type="password" name="net_password" id="net_password" placeholder="Enter your WI-FI network's password">
 
           <div class="net-prot">
-            <label for="net-protocol">WI-FI network protocol: </label>
-            <select name="net-protocol" id="net-protocol">
+            <label for="net_protocol">WI-FI network protocol: </label>
+            <select name="net_protocol" id="net_protocol">
               <option value="WPA" selected>WPA</option>
               <option value="WEP">WEP</option>
               <option value="WPA2-EAP">WPA2-EAP</option>
