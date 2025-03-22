@@ -20,12 +20,12 @@
         <h1 class="title appearOnLoad" style="--i:0">QR-CODE GENERATOR</h1>
         <p class="subtitle appearOnLoad" style="--i:2">Your personal QR-code generator.</p>
 
-        <div class="tab-buttons">
-          <button class="tab-button" data-tab-target="#net-qr-code-tab">WI-FI QR-CODE</button>
-          <button class="tab-button" data-tab-target="#qrcode-tab">CLASSIC QR-CODE</button>
+        <div class="tab-buttons appearOnLoad" style="--i:3">
+          <button class="tab-button" data-tab-target="#net-qr-code-tab">WI-FI QR</button>
+          <button class="tab-button activeBtn" data-tab-target="#qrcode-tab">TEXT QR</button>
         </div>
 
-        <form id="qrcode-tab" onsubmit="return formValidation(this)" class="appearOnLoad active" style="--i:4" data-tab-content>
+        <form id="qrcode-tab" onsubmit="return formValidation(this)" class="appearOnLoad active" style="--i:5" data-tab-content>
           <label for="qrcode-content">Type content of your QR bellow: </label>
           <input
             type="text"
@@ -38,16 +38,23 @@
         </form>
 
         <form id="net-qr-code-tab" onsubmit="return false" data-tab-content>
-          <label for="net-protocol">Network protocol: </label>
-          <input type="text" id="net-protocol" name="net-protocol" placeholder="...">
 
           <label for="net-name">Network name:</label>
           <input type="text" id="net-name" name="net-name" placeholder="...">
 
-          <label for="">Network password: </label>
+          <label for="net-password">Network password: </label>
           <input type="password" name="net-password" id="net-password" placeholder="...">
 
-          <button type="submit">Generate</button>
+          <div class="net-prot-and-button">
+            <label for="net-protocol">Netwokr protocol: </label>
+            <select name="net-protocol" id="net-protocol">
+              <option value="WPA" selected>WPA</option>
+              <option value="WEP">WEP</option>
+              <option value="WPA2-EAP">WPA2-EAP</option>
+              <option value="nopass">nopass</option>
+            </select>
+            <button type="submit">Generate</button>
+          </div>
         </form>
       </div>
     </div>

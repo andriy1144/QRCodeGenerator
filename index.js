@@ -80,7 +80,16 @@ const tabs = document.querySelectorAll("[data-tab-content]")
 tabBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     const targetTab = document.querySelector(btn.dataset.tabTarget);
-    tabs.forEach((tab) => tab.classList.remove("active"));
+    tabs.forEach((tab) => {
+      tab.classList.remove("active");
+      tab.classList.remove("appearOnLoad");
+    });
+
+    tabBtns.forEach(btn => {
+      btn.classList.remove("activeBtn");
+    })
+
     targetTab.classList.add("active");
+    btn.classList.add("activeBtn");
   })
 });
