@@ -200,7 +200,7 @@ form {
   }
 }
 
-form > label {
+form  label {
   font-size: 1.5em;
   color: var(--orange-color);
   padding: 10px 0 0 10px;
@@ -446,7 +446,7 @@ footer > p {
   font-size: 2em;
   font-family: var(--main-font);
   border: none;
-  /* background-color: var(--orange-color); */
+  background-color: transparent;
   color:var(--pink-color);
   border-radius: 15px;
   cursor: pointer;
@@ -494,3 +494,21 @@ footer > p {
 
 
 /* WI-FI QR FORM */
+#net-qr-code-tab{
+  margin-top: 30px;
+  gap:15px
+}
+
+form select{
+  border: none;
+  outline: none;
+  background-color: var(--orange-color);
+  color:white;
+  height:30px;
+  font-size: 1em;
+  width: 150px;
+  margin-left: 10px;
+  border-radius: 10px;
+  font-family: var(--main-font);
+  text-align: center;
+}

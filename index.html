@@ -39,22 +39,22 @@
 
         <form id="net-qr-code-tab" onsubmit="return false" data-tab-content>
 
-          <label for="net-name">Network name:</label>
-          <input type="text" id="net-name" name="net-name" placeholder="...">
+          <label for="net-name">WI-FI network name:</label>
+          <input type="text" id="net-name" name="net-name" placeholder="Enter your WI-FI network's name">
 
-          <label for="net-password">Network password: </label>
-          <input type="password" name="net-password" id="net-password" placeholder="...">
+          <label for="net-password">WI-FI network password: </label>
+          <input type="password" name="net-password" id="net-password" placeholder="Enter your WI-FI network's password">
 
-          <div class="net-prot-and-button">
-            <label for="net-protocol">Netwokr protocol: </label>
+          <div class="net-prot">
+            <label for="net-protocol">WI-FI network protocol: </label>
             <select name="net-protocol" id="net-protocol">
               <option value="WPA" selected>WPA</option>
               <option value="WEP">WEP</option>
               <option value="WPA2-EAP">WPA2-EAP</option>
               <option value="nopass">nopass</option>
             </select>
-            <button type="submit">Generate</button>
           </div>
+          <button type="submit">Generate</button>
         </form>
       </div>
     </div>
