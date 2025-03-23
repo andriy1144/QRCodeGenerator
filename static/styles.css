@@ -145,7 +145,7 @@ body {
 .main-container {
   display: flex;
   justify-content: center;
-  min-height: 800px;
+  min-height: 90vh;
   height: 100%;  
 }
 
