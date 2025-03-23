@@ -146,7 +146,7 @@ body {
   display: flex;
   justify-content: center;
   min-height: 800px;
-  height: 90vh;
+  height: 100%;  
 }
 
 .container {

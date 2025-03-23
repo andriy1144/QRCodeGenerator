@@ -2,6 +2,12 @@
   form {
     width: 75%;
   }
+  .tab-buttons  button{
+    font-size: 1em;
+  }
+  #net-qr-code-tab{
+    margin-bottom: 100px;
+  }
 }
 
 @media (max-width: 740px) {
@@ -11,17 +17,24 @@
   .subtitle {
     font-size: 1.5em;
   }
-  form > label {
+  form  label {
     font-size: 1.2em;
   }
 
-  form > input {
+  form  input {
     font-size: 1em;
   }
 
   form > button {
     font-size: 1.2em;
     width: 150px;
+  }
+
+  .net-prot{
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    gap: 10px;
   }
 }
 
@@ -38,6 +51,9 @@
   .qrcode-container {
     height: 400px;
   }
+  .tab-buttons {
+    width: 100%;
+  }
 }
 
 @media (max-width: 390px) {
@@ -49,6 +65,10 @@
   }
   .qrcode-container > #qrcode{
       margin: 30px;
+  }
+  .net-prot select{
+    width: 100%;
+    margin: 0;
   }
 }
 
@@ -74,16 +94,16 @@
   .subtitle {
     font-size: 1em;
   }
-  form > input {
+  form input {
     height: 20px;
     font-size: 0.7em;
   }
-  form > button {
+  form button {
     width: 100%;
     font-size: 1em;
     height: 36px;
   }
-  form > label {
+  form label {
     font-size: 0.9em;
   }
 
@@ -95,5 +115,8 @@
   }
   .container {
     width: 90%;
+  }
+  .net-prot{
+    margin-bottom: 25px;
   }
 }

@@ -29,6 +29,18 @@ function generateModalWindowAndCode(content){
 }
 
 /* QR_CODE GENERATION SECTION!!! */
+function generateQRCode(text) {
+  document.querySelector("#qrcode").innerHTML = "";
+  new QRCode(document.getElementById("qrcode"), text);
+
+  setTimeout(generateDownloadLink, 500); //Waiting for image to generate
+  
+  //Providing a temporary copy restriction for phones
+  if(!detectPhoneDeviceType()) setTimeout(generateCopyLink, 500);
+  else document.querySelector(".cp-link").style.display = "none";
+}
+
+
 function generateDownloadLink() {
   const canvas = document.querySelector("#qrcode canvas");
 
@@ -68,18 +80,6 @@ function convertImgBase64ToBlob(imgBS64) {
 
   return new Blob([byteArray], { type: "image/png" });
 }
-
-function generateQRCode(text) {
-  document.querySelector("#qrcode").innerHTML = "";
-  new QRCode(document.getElementById("qrcode"), text);
-
-  setTimeout(generateDownloadLink, 500); //Waiting for image to generate
-  
-  //Providing a temporary copy restriction for phones
-  if(!detectPhoneDeviceType()) setTimeout(generateCopyLink, 500);
-  else document.querySelector(".cp-link").style.display = "none";
-}
-
 
 /* TABS FUNCTIONALITY */
 const tabBtns = document.querySelectorAll("[data-tab-target]");
