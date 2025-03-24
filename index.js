@@ -15,16 +15,48 @@ function addWarnAnim(field){
 }
 
 function generateModalWindowAndCode(content){
-  document.querySelector("body").innerHTML +=
-  "<div class='qrcode-window'>" +
-  "<div class='qrcode-container'>" +
-  "<h2>Here is your QR-CODE</h2>" +
-  "<div id='qrcode'></div>" +
-  "<div id='action-block'>" +
-  "<a href='#' class='btn dwn-link'>Download</a><a href='#' class='btn cp-link'>Copy</a> <a href='index.html' class='btn cls-link'>Close</a> " +
-  "</div>" +
-  "</div>" +
-  "</div>";
+  let qrWindow = document.createElement("div");
+  qrWindow.classList.add("qrcode-window");
+
+  let qrContainer = document.createElement("div");
+  qrContainer.classList.add("qrcode-container");
+
+  let title = document.createElement("h2");
+  title.textContent = "Here is your QR-CODE";
+
+  let qrCodeDiv = document.createElement("div");
+  qrCodeDiv.id = "qrcode";
+
+  let actionBlock = document.createElement("div");
+  actionBlock.id = "action-block";
+
+  let downloadLink = document.createElement("a");
+  downloadLink.href = "#";
+  downloadLink.classList.add("btn", "dwn-link");
+  downloadLink.textContent = "Download";
+
+  let copyLink = document.createElement("a");
+  copyLink.href = "#";
+  copyLink.classList.add("btn", "cp-link");
+  copyLink.textContent = "Copy";
+
+  let closeLink = document.createElement("a");
+  closeLink.href = "index.html";
+  closeLink.classList.add("btn", "cls-link");
+  closeLink.textContent = "Close";
+
+  actionBlock.appendChild(downloadLink);
+  actionBlock.appendChild(copyLink);
+  actionBlock.appendChild(closeLink);
+
+  qrContainer.appendChild(title);
+  qrContainer.appendChild(qrCodeDiv);
+  qrContainer.appendChild(actionBlock);
+
+  qrWindow.appendChild(qrContainer);
+
+  document.body.appendChild(qrWindow);
+  
   generateQRCode(content);
 }
 
