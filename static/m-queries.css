@@ -54,6 +54,9 @@
   .tab-buttons {
     width: 100%;
   }
+  form{
+    margin-top: 40px;
+  }
 }
 
 @media (max-width: 390px) {
