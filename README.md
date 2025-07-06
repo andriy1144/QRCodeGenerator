@@ -23,7 +23,8 @@ Perfect for instantly sharing information via scannable QR images — no backend
 
 ## 📸 Preview
 
-
+![Homepage](https://github.com/andriy1144/QRCodeGenerator/raw/main/homepage.png)
+![QRCODE](https://github.com/andriy1144/QRCodeGenerator/raw/main/qrcode.png)
 
 ## 💡 How to Use
 1. Clone or download the repository.
