@@ -528,3 +528,85 @@ form select{
   font-family: var(--main-font);
   text-align: center;
 }
+
+/* MODAL WINDOW STYLES */
+.modal{
+  opacity: 0;
+  z-index: -1000;
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 100vh;
+  width: 100%;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  backdrop-filter: blur(5px);
+}
+
+.modal-window{
+  background-color: whitesmoke;
+  
+  min-height: 350px;
+  max-width: 400px;
+  width: 50%;
+
+  border-radius: 15px;
+
+  padding: 10px;
+}
+
+.modal-title{
+  font-size: 1.5rem;
+  text-align: center;
+
+  margin-top: 10px;
+}
+
+.error-title{
+  color: var(--pink-color);
+  font-weight: 900;
+}
+
+.error-description{
+  margin-top: 30px;
+  text-align: center;
+}
+
+.reasons-title{
+  margin-top: 30px;
+  text-align: center;
+
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.error-reasons{
+  margin: 10px auto;
+  list-style:square;
+  width:80%;
+
+  line-height: 1.2;
+}
+
+.reason{
+  margin-bottom: 5px;
+}
+
+.modal a {
+  cursor: pointer;
+  margin: 15px auto;
+}
+
+.show-modal{
+  opacity: 1 !important;
+  z-index: 1000;
+}

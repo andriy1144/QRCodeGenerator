@@ -1,3 +1,5 @@
+const error_modal = document.querySelector(".modal");
+
 function formValidation(form) {
   const userInput = form.qrcode_content;
 
@@ -57,13 +59,20 @@ function generateModalWindowAndCode(content){
 
   document.body.appendChild(qrWindow);
   
-  generateQRCode(content);
+  generateQRCode(content.trim());
 }
 
 /* QR_CODE GENERATION SECTION!!! */
 function generateQRCode(text) {
   document.querySelector("#qrcode").innerHTML = "";
-  new QRCode(document.getElementById("qrcode"), text);
+  
+  try{
+    new QRCode(document.getElementById("qrcode"), text);
+  }catch(error){
+    console.error(`Error: ${error}`);
+    error_modal.classList.add("show-modal");
+    return;
+  }
 
   setTimeout(generateDownloadLink, 500); //Waiting for image to generate
   

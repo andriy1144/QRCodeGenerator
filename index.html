@@ -67,6 +67,22 @@
       </div>
     </footer>
 
+    <div class="modal">
+      <div class="modal-window">
+        <h2 class="modal-title error-title">Something went wrong!</h2>
+        <p class="error-description">We're sorry to say, but an error occurred while processing/generating the QR code.</p>
+        <h3 class="reasons-title">Possible reasons for the error</h3>
+        
+        <ul class="error-reasons">
+          <li class="reason">The QR code content is too long (more than 1000 characters or less)</li>
+          <li class="reason">The QR code contains non-latin letters or other prohibited characters</li>
+          <li class="reason">Internet connection lost/Server-side errors etc.</li>
+        </ul>
+
+        <a href="index.html" class="btn cls-link">Close</a>
+      </div>
+    </div>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
       integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
