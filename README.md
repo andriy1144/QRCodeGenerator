@@ -39,6 +39,10 @@ Perfect for instantly sharing information via scannable QR images — no backend
   `WIFI:T:WPA;S:SSID;P:password;;`
 - QR data is not stored or transmitted — everything runs locally in your browser
 
+## ✅ Project Status
+
+🚧 This project is **completed** and fully functional.  
+🔄 _Occasional updates or improvements may still be added — depending on mood and inspiration :)_
 ## 📃 License
 
 This project is open-source and available under the [MIT License](LICENSE).
