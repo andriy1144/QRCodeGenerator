@@ -11,6 +11,10 @@
 }
 
 @media (max-width: 740px) {
+  .qrcode-container{
+    width: 90%;
+  }
+
   .title {
     font-size: 5em;
   }
