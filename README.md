@@ -51,3 +51,5 @@ This project is open-source and available under the [MIT License](LICENSE).
 
 🔧 _Feel free to contribute or fork this project for your own use._  
 ✉️ _Questions or suggestions? Reach out via Issues or Pull Requests!_
+
+👩🏻‍💻 _(The project was created as an educational one to consolidate or acquire new skills.)_
