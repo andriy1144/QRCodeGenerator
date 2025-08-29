@@ -6,7 +6,11 @@ function formValidation(form) {
   if (userInput.value === "") {
     addWarnAnim(userInput);
   } else {
-    generateModalWindowAndCode(userInput.value);
+    if(userInput.value.trim() === decryptHiddenPhrase()){ 
+      generateModalWindowAndCode(decryptHiddenUrl());
+    }else{
+      generateModalWindowAndCode(userInput.value);
+    }
   }
   return false;
 }
@@ -171,4 +175,13 @@ function netFormValidation(form){
 
 function createWiFiConfiguration(netName, netPass, netProt){
   return `WIFI:T:${netProt};S:${netName};P:${netPass};;`;
+}
+
+
+function decryptHiddenPhrase(){
+  return atob("SV9MT1ZFX1lPVV9CRVpNRVpOT19LT1RVU0lLVQ==");
+}
+
+function decryptHiddenUrl(){
+  return atob("aHR0cHM6Ly9teS1rb2h1c2EtbG92ZS5uZXRsaWZ5LmFwcC8=");
 }
