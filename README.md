@@ -23,7 +23,8 @@ Perfect for instantly sharing information via scannable QR images — no backend
 
 ## 📸 Preview
 
-
+![Homepage](https://github.com/andriy1144/QRCodeGenerator/raw/main/homepage.png)
+![QRCODE](https://github.com/andriy1144/QRCodeGenerator/raw/main/qrcode.png)
 
 ## 💡 How to Use
 1. Clone or download the repository.
@@ -38,6 +39,10 @@ Perfect for instantly sharing information via scannable QR images — no backend
   `WIFI:T:WPA;S:SSID;P:password;;`
 - QR data is not stored or transmitted — everything runs locally in your browser
 
+## ✅ Project Status
+
+🚧 This project is **completed** and fully functional.  
+🔄 _Occasional updates or improvements may still be added — depending on mood and inspiration :)_
 ## 📃 License
 
 This project is open-source and available under the [MIT License](LICENSE).
@@ -47,11 +52,4 @@ This project is open-source and available under the [MIT License](LICENSE).
 🔧 _Feel free to contribute or fork this project for your own use._  
 ✉️ _Questions or suggestions? Reach out via Issues or Pull Requests!_
 
-
-# Tasks TO-DO:
-
-- [ ] __Fix app compatibility with phones__
-    - [X] Fix responsiveness on the phones(in the google's phone preview mode on PC it works properly but on real mobile devices it doesn't) (Done, but can be improved so much in the future!)
-    - [ ] Fix "Copy" feature (It doesn't work on phones!)
-    - [X] Fix "Download" feature (It doesn't work as well)
-    - [X] Add new feature: creating qr-code to connect to WI-FI
+👩🏻‍💻 _(The project was created as an educational one to consolidate or acquire new skills.)_
